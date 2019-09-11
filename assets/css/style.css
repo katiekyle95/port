@@ -1,0 +1,74 @@
+* {
+    margin: 0px;
+}
+
+.intro {
+    height: 175vh;
+    width: 100%;
+    background-color: #ececec;
+    display: flex;
+    position: relative;
+}
+
+.introStatic {
+    height: 175vh;
+    width: 50%;
+    background-color: #f78888;
+}
+
+.introSlide {
+    height: 175vh;
+    width: 50%;
+    background-color: #f78888;
+    right: 0px;
+}
+
+.triggerOne {
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    top: 50vh;
+    background-color: aquamarine;
+    visibility: hidden;
+}
+
+.triggerTwo {
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    top: 55vh;
+    background-color: aquamarine;
+}
+
+#hello {
+    font-size: 12vw;
+    font-family: 'gilmer', sans-serif;
+    position: fixed;
+    top: 35vh;
+    right: -35vw;
+    padding-right: 2vw;
+}
+
+.fadeName {
+    font-size: 12vw;
+    font-family: 'gilmer', sans-serif;
+    position: sticky;
+    top: 35vh;
+    left: 2vh;
+    display: flex;
+    width: 60%;
+    flex-wrap: wrap;
+    z-index: 10;
+    margin-bottom: 6vh;
+}
+
+.fadeIn {
+    margin-right: 3vh;
+}
+
+.photo {
+    height: 60vh;
+    width: 100%;
+    background-color: coral;
+    
+}
