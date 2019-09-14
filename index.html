@@ -6,46 +6,159 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="https://use.typekit.net/xxs7rko.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/webfonts/gilmer-heavy.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="assets/css/webfonts/wayfinder-cf-heavy.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="assets/css/gilmer/gilmer-heavy.css" type="text/css" charset="utf-8" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Poppins:900&display=swap" rel="stylesheet">
     <title>Katie Kyle</title>
 </head>
 
 <body>
 
+    <div class="nav">
+        <a class="navLink" href="#about">about</a>
+        <a class="navLink" href="#projects">projects</a>
+        <a class="navLink" href="#contact">contact</a>
+
+    </div>
+
     <section class="intro">
-        <div class="introStatic">
-            <div class="fadeName"  data-aos="fade-up" data-aos-duration="1000" data-aos-anchor=".triggerTwo"
-                data-aos-anchor-placement="top-center">
-                <div class="fadeIn">I'm</div>
-                <div class="fadeIn">Katie.</div>
+        <div class="rotateOnScroll">Hello, I'm Katie.</div>
+        <div class="fadeOutOnScroll">check it out</div>
+    </section>
+
+
+    <section class="about">
+        <a name="about"></a>
+        <img class="aboutTitle" src="assets/images/about.png" alt="about" data-aos="fade-up" alt="about-me">
+        <div class="container">
+            <div class="aboutText">
+                <div class="aboutImg" data-aos="fade">
+                    <img class="portrait" src="assets/images/selfportrait.png" alt="katie">
+                    <h3 class="underImg">(this is what i look like)</h3>
+                </div>
+                <h2 class="tagline" data-aos="fade">I'm a front-end web developer and designer based in Austin, Texas. I
+                    strive to pair
+                    sharp,
+                    thoughtful design with clean, efficient code.</h2>
+                <h3 class="aboutDesc" data-aos="fade">I approach coding with the intent to solve a problem with a
+                    solution that is clear
+                    and
+                    efficient while keeping format and legibility in mind. I am currently proficient in JavaScript,
+                    jQuery,
+                    HTML, CSS, and React, but I am always working to expand my skill set.</h3>
+                <h3 class="aboutDesc" data-aos="fade">Before pursuing web development, I earned a BA in Art from the
+                    University of Texas
+                    at
+                    Austin. My background in art lends itself to my diverse knowledge of design and detail-oriented
+                    approach to
+                    projects. I begin every process with the necessary research to ensure I have a clear plan in mind
+                    and the
+                    appropriate tools for execution. While I am comfortable with following another designer's lead, I am
+                    also
+                    not afraid to offer my creative view-point. I thrive in collaborative group settings, and I'm not
+                    afraid to take the lead and share my ideas with others.</h3>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="cover"></div>
+
+    <section class="projects">
+        <a name="projects"></a>
+        <img class="projTitle" data-aos="fade-up" src="assets/images/projects.png" alt="projects">
+        <div class="horrorscope">
+            <img class="filler" src="assets/images/side.png" data-aos="fade" />
+            <div class="individual" data-aos="fade">
+                <div class="imgOverlay">
+                    <img class="horsco" src="assets/images/horscope.png" alt="horror scope">
+                    <a class="overlay" href="https://horror-scope.herokuapp.com/" target="_blank"></a>
+                    <a class="overlayText">check it out &rarr;</a>
+                </div>
+                <div class="indText">
+                    <a href="https://horror-scope.herokuapp.com/" target="_blank" class="indTitle">Horror Scope</a>
+                    <h4>Design | Full-stack Development</h4>
+                    <h3>An online database to rate and inventory horror movies.</h3>
+                </div>
+            </div>
+            <img class="filler" src="assets/images/sideaccent.png" data-aos="fade" />
+        </div>
+    </section>
+
+    <section class="contact">
+        <a name="contact"></a>
+        <img class="contactTitle" data-aos="fade-up" src="assets/images/contact.png">
+        <h1 data-aos="fade">Need help? Put me to work!</h1>
+        <div class="contactInfo" data-aos="fade">
+            <a class="email" href="mailto:katiekyle@gmail.com">email me!</a>
+            <br>
+            <div class="outerLinks">
+                <a href="https://www.linkedin.com/in/katie-kyle-a3b123107/"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/katiekyle95"><i class="fab fa-github"></i></a>
             </div>
         </div>
-        <div class="introSlide" data-aos="slide-right" data-aos-duration="2000" data-aos-anchor=".triggerOne"
-            data-aos-anchor-placement="top-center"></div>
-        <div class="triggerOne"></div>
-        <div class="slideOut" id="hello" data-aos="slide-right" data-aos-duration="2000" data-aos-anchor=".triggerOne"
-            data-aos-anchor-placement="top-center">Hello,</div>
-        <div class="triggerTwo"></div>
+        
 
     </section>
 
-    <section class="photo">
+    <footer>&copy; 2019</footer>
 
-    </section>
+
+
 
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="assets/js/rellax.js"></script>
+    <script src="https://kit.fontawesome.com/385ca552fe.js"></script>
     <script>
         $(document).ready(function () {
 
-            AOS.init();
+            AOS.init(3000);
 
-            var rellax = new Rellax(".rellax");
+            var didScroll;
+            var lastScrollTop = 0;
+            var delta = 5;
+            var navbarHeight = $('.nav').outerHeight();
+
+            $(window).scroll(function (event) {
+                didScroll = true;
+            });
+
+            setInterval(function () {
+                if (didScroll) {
+                    hasScrolled();
+                    didScroll = false;
+                }
+            }, 250);
+
+            function hasScrolled() {
+
+                var st = $(this).scrollTop();
+
+                if (Math.abs(lastScrollTop - st) <= delta)
+                    return;
+
+                if (st > lastScrollTop && st > navbarHeight) {
+                    // Scroll Down
+                    $('.nav').removeClass('nav-down').addClass('nav-up');
+                } else {
+                    // Scroll Up
+                    if (st + $(window).height() < $(document).height()) {
+                        $('.nav').removeClass('nav-up').addClass('nav-down');
+                    }
+                }
+
+                lastScrollTop = st;
+            }
+
+            $('.overlay').bind('mouseover', function () {
+                $('.overlayText').css('opacity', '1')
+            }).on('mouseleave', function () {
+                $('.overlayText').css('opacity', '0');
+            });
 
         })
     </script>
