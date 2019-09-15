@@ -406,5 +406,7 @@ footer {
         text-align: justify;
         text-justify: inter-word;
         letter-spacing: 0;
+        width: 100%;
+        margin
     }
 }
