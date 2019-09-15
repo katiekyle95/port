@@ -68,7 +68,7 @@ a {
 }
 
 .nav-up {
-    top: -76px;
+    top: -85px;
 }
 
 .rotateOnScroll {
@@ -342,6 +342,10 @@ footer {
 }
 
 @media screen and (max-aspect-ratio: 3/4) {
+    .rotateOnScroll {
+        top: 35vh;
+    }
+    
     .portrait {
         width: 36vw;
         height: auto;
@@ -359,6 +363,10 @@ footer {
 }
 
 @media screen and (max-aspect-ratio: 9/16) {
+    .rotateOnScroll {
+        top: 35vh
+    }
+    
     .aboutTitle {
         height: 150px;
         margin-left: 10%;
@@ -400,11 +408,106 @@ footer {
         font-size: 24px;
     }
 
+}
 
+@media only screen 
+  and (min-width: 768px) 
+  and (max-width: 768px)
+  and (orientation: portrait)
+  {
 
-    .aboutText {
-        text-align: justify;
-        text-justify: inter-word;
-        letter-spacing: 0;
+    .portrait {
+        width: 36vw;
+        height: auto;
+        margin: 20px;
+        margin-bottom: 0px;
     }
+
+    .aboutText h2 {
+        font-size: 20px;
+    }
+
+    .aboutTitle {
+        margin-left: 30%;
+    }
+
+    .outerLinks {
+        margin-bottom: 4vh;
+    }
+}
+
+@media only screen 
+  and (min-width: 834px) 
+  and (max-width: 834px)
+  and (orientation: portrait)
+  {
+
+    .portrait {
+        width: 36vw;
+        height: auto;
+        margin: 20px;
+        margin-bottom: 0px;
+    }
+
+    .aboutText h2 {
+        font-size: 20px;
+    }
+
+    .aboutTitle {
+        margin-left: 30%;
+    }
+
+    .outerLinks {
+        margin-bottom: 4vh;
+    }
+}
+
+@media screen 
+    and (max-width: 600px)  {
+    
+    .rotateOnScroll {
+        top: 35vh
+    }
+    
+    .aboutTitle {
+        height: 150px;
+        margin-left: 10%;
+    }
+
+    .aboutImg {
+        float: none;
+    } 
+
+    .portrait {
+        width: 75%;
+        margin-top: 5px;
+    }
+
+    .projTitle {
+        height: 97px;
+    }
+
+    .filler {
+        visibility: hidden;
+        width: 0%;
+    }
+
+    .individual {
+        width: 100%;
+        margin: 0 10%;
+    }
+
+    .horrorscope {
+        margin: 50px auto 30px;
+        align-items: center;
+    }
+
+    .contactTitle {
+        height: 139px;
+    }
+
+    .contact h1 {
+        font-size: 24px;
+    }
+
 }
