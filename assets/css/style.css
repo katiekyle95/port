@@ -511,3 +511,15 @@ footer {
     }
 
 }
+
+@media screen and (min-width: 1200px) {
+    .all {
+        width: 1200px;
+        margin: 0 auto;
+    }
+
+    .portrait {
+        width: 400px;
+        height: auto;
+    }
+}
